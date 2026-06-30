@@ -1,0 +1,44 @@
+# ===== 站点设置 =====
+title: HanCheng 的个人博客
+description: 学习笔记、项目复盘、踩坑记录、技术分享与读书笔记
+author: HanCheng
+lang: zh-CN
+timezone: Asia/Shanghai
+
+# ===== URL 设置 =====
+url: "https://kayerh.github.io"
+baseurl: ""
+
+# ===== 构建设置 =====
+markdown: kramdown
+permalink: /posts/:title/
+
+# ===== 分页设置 =====
+paginate: 6
+paginate_path: /blog/page:num/
+
+# ===== 插件 =====
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# ===== 文章默认设置 =====
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: HanCheng
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# ===== 排除文件 =====
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<!-- Hero 区域 -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-avatar">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="45" r="25" fill="#b0bec5"/>
+        <ellipse cx="60" cy="100" rx="40" ry="30" fill="#b0bec5"/>
+      </svg>
+    </div>
+    <h1 class="hero-title">{{ site.title }}</h1>
+    <p class="hero-subtitle">{{ site.description }}</p>
+    <div class="hero-links">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">阅读文章</a>
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-outline">关于我</a>
+    </div>
+  </div>
+</section>
+
+<!-- 最新文章 -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">最新文章</h2>
+    <div class="post-grid">
+      {% for post in site.posts limit:5 %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+    {% if site.posts.size > 5 %}
+    <div class="section-more">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">查看全部文章 →</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- 分类入口 -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">内容板块</h2>
+    <div class="category-grid">
+      <a href="{{ '/blog/?category=learning' | relative_url }}" class="category-card">
+        <span class="category-icon">📖</span>
+        <h3>学习笔记</h3>
+        <p>编程语言、框架、工具的学习记录</p>
+      </a>
+      <a href="{{ '/blog/?category=project' | relative_url }}" class="category-card">
+        <span class="category-icon">🚀</span>
+        <h3>项目复盘</h3>
+        <p>项目总结与架构回顾</p>
+      </a>
+      <a href="{{ '/blog/?category=debug' | relative_url }}" class="category-card">
+        <span class="category-icon">🐛</span>
+        <h3>踩坑记录</h3>
+        <p>遇到的问题和解决过程</p>
+      </a>
+      <a href="{{ '/blog/?category=tech' | relative_url }}" class="category-card">
+        <span class="category-icon">💡</span>
+        <h3>技术分享</h3>
+        <p>深入讲解某个技术点</p>
+      </a>
+      <a href="{{ '/blog/?category=reading' | relative_url }}" class="category-card">
+        <span class="category-icon">📚</span>
+        <h3>读书笔记</h3>
+        <p>技术书籍与文章读后感</p>
+      </a>
+    </div>
+  </div>
+</section>
